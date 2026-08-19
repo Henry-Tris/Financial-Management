@@ -3,7 +3,6 @@ package entities;
 import java.time.LocalDate;
 
 import enumEntities.PaymentStatus;
-import enumEntities.TypeStatus;
 
 public class sellOnCredit extends Deal {
 
@@ -11,8 +10,8 @@ public class sellOnCredit extends Deal {
     private Product product;
     private PaymentStatus status;      
 
-    public sellOnCredit(Client client, Product product, double value, LocalDate date, TypeStatus status) {
-        super(value, date, enumEntities.TypeStatus.RECEITA); 
+    public sellOnCredit(Client client, Product product, double value, LocalDate date, String name, Category category) {
+        super(value, date, enumEntities.TypeStatus.RECEITA, name, category, enumEntities.ExpenseContext.EMPRESARIAL); 
         this.client = client;
         this.product = product;
         this.status = PaymentStatus.PENDENT;
