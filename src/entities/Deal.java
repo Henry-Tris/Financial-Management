@@ -2,19 +2,19 @@ package entities;
 
 import java.time.LocalDate;
 
-import enumEntities.Status;
+import enumEntities.TypeStatus;
 
 public class Deal {
 
 	private double value;
 	private LocalDate date;
-	private Status type;
+	private TypeStatus type;
 	
 	public Deal() {
 		
 	}
 
-	public Deal(double value, LocalDate date, Status type) {
+	public Deal(double value, LocalDate date, TypeStatus type) {
 		this.value = value;
 		this.date = date;
 		this.type = type;
@@ -36,11 +36,11 @@ public class Deal {
 		this.date = date;
 	}
 
-	public Status getType() {
+	public TypeStatus getType() {
 		return type;
 	}
 
-	public void setType(Status type) {
+	public void setType(TypeStatus type) {
 		this.type = type;
 	}
 }

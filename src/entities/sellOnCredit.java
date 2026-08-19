@@ -2,66 +2,35 @@ package entities;
 
 import java.time.LocalDate;
 
-import enumStatus.Status;
+import enumEntities.PaymentStatus;
+import enumEntities.TypeStatus;
 
-public class sellOnCredit extends Deal{
+public class sellOnCredit extends Deal {
 
-	private String clientName;
-	private String productName;
-	private double value;
-	private LocalDate date;
-	private Status status;
-	
-	public sellOnCredit() {
-		
-	}
+    private Client client;      
+    private Product product;
+    private PaymentStatus status;      
 
-	public sellOnCredit(String clientName, String productName, double value, LocalDate date, Status status) {
-		this.clientName = clientName;
-		this.productName = productName;
-		this.value = value;
-		this.date = date;
-		this.status = status;
-	}
+    public sellOnCredit(Client client, Product product, double value, LocalDate date, TypeStatus status) {
+        super(value, date, enumEntities.TypeStatus.RECEITA); 
+        this.client = client;
+        this.product = product;
+        this.status = PaymentStatus.PENDENT;
+    }
 
-	public String getClientName() {
-		return clientName;
-	}
+    public Client getClient() {
+        return client;
+    }
 
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
-	}
+    public Product getProduct() {
+        return product;
+    }
 
-	public String getProductName() {
-		return productName;
-	}
+    public PaymentStatus getStatus() {
+        return status;
+    }
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public double getValue() {
-		return value;
-	}
-
-	public void setValue(double value) {
-		this.value = value;
-	}
-
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-	
+    public void setStatus(PaymentStatus status) {
+        this.status = status;
+    }
 }
