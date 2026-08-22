@@ -40,4 +40,19 @@ public class Target {
 		this.currentValue = currentValue;
 	}
 	
+	public double getProgressPercentage() {
+	    if (targetValue == 0) {
+	        return 0;
+	    }
+
+	    return (currentValue / targetValue) * 100;
+	}
+
+	public void addProgress(double amount) {
+	    this.currentValue += amount;
+	}
+
+	public boolean isCompleted() {
+	    return currentValue >= targetValue;
+	}
 }

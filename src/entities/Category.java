@@ -2,16 +2,20 @@ package entities;
 
 import java.util.Objects;
 
+import enumEntities.BudgetBucket;
+
 public class Category {
 
 	private String name;
+	private BudgetBucket bucket;
 	
 	public Category() {
 		
 	}
 
-	public Category(String name) {
+	public Category(String name, BudgetBucket bucket) {
 		this.name = name;
+		this.bucket = bucket;
 	}
 
 	public String getName() {
@@ -20,6 +24,14 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public BudgetBucket getBucket() {
+		return bucket;
+	}
+
+	public void setBucket(BudgetBucket bucket) {
+		this.bucket = bucket;
 	}
 
 	@Override

@@ -30,4 +30,7 @@ public class TaxRule {
 		this.percentage = percentage;
 	}
 	
+	public double calculateTax(double revenue) {
+	    return revenue * (percentage / 100.0);
+	}
 }
